@@ -1,11 +1,33 @@
 Package: ecofunr
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Deriving Ecosystem Functional Properties
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author@R: c(
+    person("Daniel E.", "Pabon-Moreno", email = "dpabon@bgc-jena.mpg.de", role(c("aut", "cre")))
+    person("Mirco", "Migliavacca", email = "mmigliavacca@bgc-jena.mpg.de", role ("ctb"))
+    person("Miguel", "Mahecha", email = "mmahecha@bgc-jena.mpg.de", role ("ctb"))
+    )
+URL: https://github.com/dpabon/ecofunr
+BugReports: https://github.com/dpabon/ecofunr/issues
+# Maintainer: The package maintainer <yourself@somewhere.net
+Description: A package to derive Ecosystem Functional properties using the
+    exchange of energy and matter registered by eddy covariance towers. See XXXX
+    for more information, and examples
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
+Imports:
+  REddyProc,
+  sirad,
+  bigleaf,
+  lubridate,
+  zoo,
+  ArgumentCheck,
+  Rdpack
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat
+RdMacros: Rdpack
+VignetteBuilder: knitr
+RoxygenNote: 6.1.1
