@@ -4,14 +4,25 @@
 \alias{cue}
 \title{Carbon Use Efficiency}
 \usage{
-cue(GPP, COMP, method = "plants")
+cue(GPP, NEP, NPP, Rb, method = "plants", dates,
+  aggregation.time = "NULL", aggregation.metric, overlapping = F,
+  prob = 0.9)
 }
 \arguments{
 \item{GPP}{Gross Primary Production (units)}
 
-\item{COMP}{Can be: NEP, NPP, Rb (see XXX Reddyproc function)}
+\item{NEP}{Net Ecosystem Productivity (units)}
 
-\item{method}{Can be "plants", "ecosystem", "apparent"}
+\item{NPP}{Net Primary Productivity}
+
+\item{Rb}{Basal Respiration (See Reddyproc function XXX)}
+
+\item{method}{Can be "plants", "ecosystem", "apparent", "all". See details.}
+
+\item{prob}{}
+}
+\value{
+An object of type "data.frame" if method = "all". Otherwise a numeric vector.
 }
 \description{
 testing

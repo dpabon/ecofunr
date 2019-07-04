@@ -1,13 +1,20 @@
 #' Carbon Use Efficiency
 #'
 #' @importFrom Rdpack reprompt
+#'
 #' @param GPP Gross Primary Production (units)
 #' @param NEP Net Ecosystem Productivity (units)
 #' @param NPP Net Primary Productivity
 #' @param Rb Basal Respiration (See Reddyproc function XXX)
 #' @param method Can be "plants", "ecosystem", "apparent", "all". See details.
+#' @param dates
+#' @param aggregation.time
+#' @param aggregation.metric
+#' @param overlapping
+#' @param prob
 #'
-#' @return
+#' @return An object of type "data.frame" if method = "all". Otherwise a numeric vector.
+#'
 #' @export
 #'
 #' @description
