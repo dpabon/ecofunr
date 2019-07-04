@@ -36,23 +36,6 @@ An object of type "data.frame" if wue.v = "all". Otherwise an object of the clas
 This function estimate different Water use efficiency index.
 Water use efficiency
 }
-\details{
-\strong{Water Use Efficiency (wue) \insertCite{law_environmental_2002}{ecofunr}}
-
-\deqn{WUE = \frac{GPP (gCm^{-2}s^{-1})}{ET (kg H_{2}Om^{-2}s^{-1})}}{WUE = GPP / ET}
-
-\strong{Intrinsic Water use efficiency (iwue) See: \insertCite{beer_temporal_2009-1}{ecofunr}}
-
-\deqn{iWUE = \frac{GPP}{G_{s}}}{iWUE = GPP / Gs}
-
-where Gs is the bulk surface conductance. See \code{\link[bigleaf]{surface.conductance}}
-
-\strong{Inherent Water Use Efficiency (Iwue) \insertCite{beer_temporal_2009-1}{ecofunr}}
-
-\deqn{IWUE = \frac{GPP*VPD}{ET}}{IWUE = GPP * VPD / ET}
-
-\strong{Underlyng Water Use Efficiency (uwue)}
-}
 \examples{
 
 }

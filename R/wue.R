@@ -33,8 +33,15 @@
 #'
 #' \deqn{IWUE = \frac{GPP*VPD}{ET}}{IWUE = GPP * VPD / ET}
 #'
-#' \strong{Underlyng Water Use Efficiency (uwue)}
+#' \strong{Underlyng Water Use Efficiency (uwue)} \insertCite{zhou_effect_2014}{ecofunr}
 #'
+#' \deqn{uWUE = \frac{GPP * \sqrt{VPD}{ET}}{uWUE = GPP * sqrt(VPD) / ET}
+#'
+#' \strong{Undelying Water Use Efficiency using transpiration from TEA algorithm (teauWUE)} \insertCite{nelson_coupling_2018-1}{ecofunr}
+#'
+#' \deqn{teauWUE = \frac{GPP * \sqrt{VPD}}{T}}{teauWUE = GPP * sqrt(VPD) / T}
+#'
+#' where T is Transpiration derived from TEA algorithm \insertCite{nelson_coupling_2018-1}{ecofunr}
 #'
 #'
 #' @export
