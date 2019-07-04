@@ -5,7 +5,7 @@
 #' @param VPD  time series. Object of class "vector".
 #' @param ET  time series. Object of class "vector". See: \code{\link[bigleaf]{LE.to.ET}}.
 #' @param Gs bulk surface conductance. Object of class "vector"
-#' @param wue.v WUE index. By default "wue". Options: "wue", "iwue", "Iwue", "uwue", "all". See Details for further explanaition.
+#' @param method WUE index. By default "wue". Options: "wue", "iwue", "Iwue", "uwue", "all". See Details for further explanaition.
 #' @param dates a vector of class "Date" of the same length of GPP.
 #' @param aggregation.time Can be "NULL", "day", "month", "year", growing season "gs". if it's
 #' a number it's considered as a time window in number of days. If "optim" the optimum number of days will be estimate to reduce the sd of each chunck. See \code{\link[ecofunr]{aggreg}}.
@@ -42,7 +42,7 @@
 #' @references
 #' \insertAllCited{}
 #'
-wue <- function(GPP, VPD, ET, Gs, wue.v = "wue", dates, aggregation.time = "NULL", aggregation.metric, overlapping = F, prob = 0.9) {
+wue <- function(GPP, VPD, ET, Gs, method = "wue", dates, aggregation.time = "NULL", aggregation.metric, overlapping = F, prob = 0.9) {
  # to check arguments and program error messages
   # three options for wue.v = wue (water use efficiency), iwue (intrinsic water use efficiency), Iwue (inherent water use efficiency), uwue (underlying water use efficiency)
 
@@ -55,8 +55,7 @@ wue <- function(GPP, VPD, ET, Gs, wue.v = "wue", dates, aggregation.time = "NULL
 
   ArgumentCheck::finishArgCheck(Check)
 
-  if (wue.v == "wue") {
-    # check that exist the arguments
+  if (method == "wue") {
     wue <- GPP / ET
     if (is.null(aggregation.time)) {
       return(wue)
@@ -64,7 +63,7 @@ wue <- function(GPP, VPD, ET, Gs, wue.v = "wue", dates, aggregation.time = "NULL
       return(aggreg(wue, aggregation.time, aggregation.metric, dates, overlapping, prob))
     }
   }
-  else if (wue.v == "iwue") {
+  else if (method == "iwue") {
     wue <- GPP / Gs
     if (is.null(aggregation.time)) {
       return(wue)
@@ -72,7 +71,7 @@ wue <- function(GPP, VPD, ET, Gs, wue.v = "wue", dates, aggregation.time = "NULL
       return(aggreg(wue, aggregation.time, aggregation.metric, dates, overlapping, prob))
     }
   }
-  else if (wue.v == "Iwue") {
+  else if (method == "Iwue") {
     wue <- GPP * VPD / ET
     if (is.null(aggregation.time)) {
       return(wue)
@@ -80,7 +79,7 @@ wue <- function(GPP, VPD, ET, Gs, wue.v = "wue", dates, aggregation.time = "NULL
       return(aggreg(wue, aggregation.time, aggregation.metric, dates, overlapping, prob))
     }
   }
-  else if (wue == "uwue") {
+  else if (method == "uwue") {
     wue <- GPP * sqrt(VPD) / ET
     if (is.null(aggregation.time)) {
       return(wue)
@@ -88,13 +87,13 @@ wue <- function(GPP, VPD, ET, Gs, wue.v = "wue", dates, aggregation.time = "NULL
       return(aggreg(wue, aggregation.time, aggregation.metric, dates, overlapping, prob))
     }
   }
-  else if (wue.v == "all") {
+  else if (method == "all") {
     wue <- GPP / ET
     iwue <- GPP / Gs
     Iwue <- GPP * VPD / ET
     uwue <- GPP * sqrt(VPD) / ET
     if (is.null(aggregation.time)) {
-      return(data.frame(wue = wue, intrinc.wue = iwue, inher.wue = wuei, under.wue = uwue))
+      return(data.frame(wue = wue, intrins.wue = iwue, inher.wue = wuei, under.wue = uwue))
     }else{
       wue <- aggreg(wue, aggregation.time, aggregation.metric, dates, overlapping, prob)
       iwue <- aggreg(iwue, aggregation.time, aggregation.metric, dates, overlapping, prob)
