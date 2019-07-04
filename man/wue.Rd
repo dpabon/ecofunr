@@ -4,7 +4,7 @@
 \alias{wue}
 \title{Water Use Efficiency}
 \usage{
-wue(GPP, VPD, ET, Gs, wue.v = "wue", dates, aggregation.time = "NULL",
+wue(GPP, VPD, ET, Gs, method = "wue", dates, aggregation.time = "NULL",
   aggregation.metric, overlapping = F, prob = 0.9)
 }
 \arguments{
@@ -16,7 +16,7 @@ wue(GPP, VPD, ET, Gs, wue.v = "wue", dates, aggregation.time = "NULL",
 
 \item{Gs}{bulk surface conductance. Object of class "vector"}
 
-\item{wue.v}{WUE index. By default "wue". Options: "wue", "iwue", "Iwue", "uwue", "all". See Details for further explanaition.}
+\item{method}{WUE index. By default "wue". Options: "wue", "iwue", "Iwue", "uwue", "all". See Details for further explanaition.}
 
 \item{dates}{a vector of class "Date" of the same length of GPP.}
 
@@ -51,7 +51,7 @@ where Gs is the bulk surface conductance. See \code{\link[bigleaf]{surface.condu
 
 \deqn{IWUE = \frac{GPP*VPD}{ET}}{IWUE = GPP * VPD / ET}
 
-\strong{Underlyng Water Use Efficiency (uwue) }
+\strong{Underlyng Water Use Efficiency (uwue)}
 }
 \examples{
 

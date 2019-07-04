@@ -33,7 +33,9 @@
 #'
 #' \deqn{IWUE = \frac{GPP*VPD}{ET}}{IWUE = GPP * VPD / ET}
 #'
-#' \strong{Underlyng Water Use Efficiency (uwue) }
+#' \strong{Underlyng Water Use Efficiency (uwue)}
+#'
+#'
 #'
 #' @export
 #'
