@@ -23,7 +23,6 @@
 #'
 #'@examples
 #'
-#'@references
 #'
 #'
 gppsat <- function(GPP,

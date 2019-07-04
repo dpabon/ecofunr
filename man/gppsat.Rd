@@ -54,7 +54,6 @@ GPPsat
 }
 \examples{
 
-}
-\references{
+
 
 }
