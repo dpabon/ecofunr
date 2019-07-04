@@ -8,9 +8,9 @@ wue(GPP, VPD, ET, Gs, wue.v = "wue", dates, aggregation.time = "NULL",
   aggregation.metric, overlapping = F, prob = 0.9)
 }
 \arguments{
-\item{GPP}{time series. Object of class "vector"}
+\item{GPP}{time series. Object of class "vector".}
 
-\item{VPD}{time series. Object of class "vector"}
+\item{VPD}{time series. Object of class "vector".}
 
 \item{ET}{time series. Object of class "vector". See: \code{\link[bigleaf]{LE.to.ET}}.}
 
@@ -18,19 +18,19 @@ wue(GPP, VPD, ET, Gs, wue.v = "wue", dates, aggregation.time = "NULL",
 
 \item{wue.v}{WUE index. By default "wue". Options: "wue", "iwue", "Iwue", "uwue", "all". See Details for further explanaition.}
 
-\item{dates}{a vector of class "Date" of the same length of GPP}
+\item{dates}{a vector of class "Date" of the same length of GPP.}
 
-\item{aggregation.time}{Could be "NULL", "day", "month", "year", growing season "gs". if it's
+\item{aggregation.time}{Can be "NULL", "day", "month", "year", growing season "gs". if it's
 a number it's considered as a time window in number of days. If "optim" the optimum number of days will be estimate to reduce the sd of each chunck. See \code{\link[ecofunr]{aggreg}}.}
 
-\item{aggregation.metric}{Could be "mean", "max", "min", "median", and "quant". if "quant" a number between 0 and 1 need to be provided in prob parameter}
+\item{aggregation.metric}{Can be "mean", "max", "min", "median", and "quant". if "quant" a number between 0 and 1 need to be provided in prob parameter}
 
-\item{overlapping}{Could be FALSE or TRUE. If TRUE the}
+\item{overlapping}{Can be "NULL" or a number. If it's a number equivale to the parameter by of the \cite{\link[zoo]{rollapply}} function.}
 
-\item{prob}{Only used if aggregation.metric is "quant", a number between 0 and 1. By default 0.9}
+\item{prob}{Only used if aggregation.metric is "quant", a number between 0 and 1. By default 0.9.}
 }
 \value{
-An object of type "data.frame" if wue.v = "all". Otherwise an object of the class "vector"
+An object of type "data.frame" if wue.v = "all". Otherwise an object of the class "vector".
 }
 \description{
 This function estimate different Water use efficiency index.
@@ -41,8 +41,6 @@ Water use efficiency
 
 \deqn{WUE = \frac{GPP (gCm^{-2}s^{-1})}{ET (kg H_{2}Om^{-2}s^{-1})}}{WUE = GPP / ET}
 
-
-
 \strong{Intrinsic Water use efficiency (iwue) See: \insertCite{beer_temporal_2009-1}{ecofunr}}
 
 \deqn{iWUE = \frac{GPP}{G_{s}}}{iWUE = GPP / Gs}
@@ -52,6 +50,8 @@ where Gs is the bulk surface conductance. See \code{\link[bigleaf]{surface.condu
 \strong{Inherent Water Use Efficiency (Iwue) \insertCite{beer_temporal_2009-1}{ecofunr}}
 
 \deqn{IWUE = \frac{GPP*VPD}{ET}}{IWUE = GPP * VPD / ET}
+
+\strong{Underlyng Water Use Efficiency (uwue) }
 }
 \examples{
 
