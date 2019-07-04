@@ -12,7 +12,7 @@
 #'
 #' @description
 #'
-#' XXXXX. \insertCite{nichols_evaluation_1993}.
+#' XXXXX. \insertCite{nichols_evaluation_1993}{ecofunr}.
 #'
 #' @return
 #' @export

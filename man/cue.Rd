@@ -32,11 +32,11 @@ testing
 
 \strong{plants}
 Carbon Use efficiency (CUE) provides a measure of what fraction of total carbon assimilation becomes
-incorported into new tissues. \insertCite{chambers_respiration_2004}
+incorported into new tissues. \insertCite{chambers_respiration_2004}{ecofunr}
 
 \deqn{CUE = \frac{NPP}{GPP}}{CUE = NPP / GPP}
 
-\strong{ecosystem} \insertCite{fernandez-martinez_nutrient_2014}:
+\strong{ecosystem} \insertCite{fernandez-martinez_nutrient_2014}{ecofunr}:
 
 \deqn{CUE = \frac{NEP}{GPP}}{CUE = NEP / GPP}
 
@@ -44,7 +44,7 @@ incorported into new tissues. \insertCite{chambers_respiration_2004}
 
 \deqn{CUE = 1 - \frac{Rb}{GPP}}{CUE = 1 - (Rb / GPP)}
 
-For a complete review about all CUE metrics at different spatial and temporal scales check \insertCite{manzoni_reviews_2018}
+For a complete review about all CUE metrics at different spatial and temporal scales check \insertCite{manzoni_reviews_2018}{ecofunr}
 }
 
 \references{

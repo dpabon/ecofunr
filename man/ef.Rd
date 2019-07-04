@@ -17,7 +17,7 @@ ef(LE, H, dates, aggregation.time = "NULL", aggregation.metric,
 \item{prob}{}
 }
 \description{
-XXXXX. \insertCite{nichols_evaluation_1993}.
+XXXXX. \insertCite{nichols_evaluation_1993}{ecofunr}.
 }
 \details{
 Evaporative fraction is the ration between Latent heat and the sum of sensible heat and latent heat.....
