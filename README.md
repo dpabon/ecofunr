@@ -4,7 +4,7 @@ A framework to derive **Eco**system **Fun**ctional Properties including Physio-P
 
 ## Installation
 
-You can install the released version of ecofunr from [github](https://github.com/gdkrmr/dimRed) with:
+You can install the released version of ecofunr from [github](https://github.com/dpabon/ecofunr) with:
 
 ``` r
 devtools::install_github("dpabon/ecofunr")
