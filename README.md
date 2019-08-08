@@ -1,6 +1,6 @@
 # ecofunr
 
-A framework to derive Ecosystem Functional Properties including Physio-Phenological events using [FLUXNET](https://fluxnet.fluxdata.org/) database.
+A framework to derive **Eco**system **Fun**ctional Properties including Physio-Phenological events using [FLUXNET](https://fluxnet.fluxdata.org/) database.
 
 ## Installation
 
