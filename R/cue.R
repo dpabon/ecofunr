@@ -7,18 +7,19 @@
 #' @param NPP Net Primary Productivity
 #' @param Rb Basal Respiration (See Reddyproc function XXX)
 #' @param method Can be "plants", "ecosystem", "apparent", "all". See details.
-#' @param dates
-#' @param aggregation.time
-#' @param aggregation.metric
-#' @param overlapping
-#' @param prob
+#' @param dates a vector of class "Date" with the same length of GPP.
+#' @param aggregation.time Can be "NULL", "day", "month", "year", growing season "gs". if it's
+#' a number it's considered as a time window in number of days. If "optim" the optimum number of days will be estimate to reduce the sd of each chunck. See \code{\link[ecofunr]{aggreg}}.
+#' @param aggregation.metric Can be "mean", "max", "min", "median", and "quant". if "quant" a number between 0 and 1 need to be provided for prob parameter.
+#' @param overlapping Can be "NULL" or a number. If it's a number equivale to the parameter by of the \cite{\link[zoo]{rollapply}} function.
+#' @param prob Only used if aggregation.metric is "quant", a number between 0 and 1. By default 0.9.
 #'
 #' @return An object of type "data.frame" if method = "all". Otherwise a numeric vector.
 #'
 #' @export
 #'
 #' @description
-#' testing
+#' This function estimate different metrics of Carbon Use Efficiency
 #' @section Methods:
 #'
 #' \strong{plants}
@@ -31,7 +32,7 @@
 #'
 #' \deqn{CUE = \frac{NEP}{GPP}}{CUE = NEP / GPP}
 #'
-#' \strong{apparent} (Check literature ask to Mirco)
+#' \strong{apparent} (Reference is missing)
 #'
 #' \deqn{CUE = 1 - \frac{Rb}{GPP}}{CUE = 1 - (Rb / GPP)}
 #'

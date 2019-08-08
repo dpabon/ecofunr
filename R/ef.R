@@ -1,26 +1,29 @@
 #' Evaporative Fraction
 #'
-#' Evaporative fraction is the ration between Latent heat and the sum of sensible heat and latent heat.....
+#'
 #'
 #' @param LE Latent heat (units).
 #' @param H Sensible heat (units).
 #' @param dates Dates vector.
-#' @param aggregation.time
-#' @param aggregation.metric
-#' @param overlapping
-#' @param prob
+#' @param aggregation.time Can be "NULL", "day", "month", "year", growing season "gs". if it's
+#' a number it's considered as a time window in number of days. If "optim" the optimum number of days will be estimate to reduce the sd of each chunck. See \code{\link[ecofunr]{aggreg}}.
+#' @param aggregation.metric Can be "mean", "max", "min", "median", and "quant". if "quant" a number between 0 and 1 need to be provided for prob parameter.
+#' @param overlapping Can be "NULL" or a number. If it's a number equivale to the parameter by of the \cite{\link[zoo]{rollapply}} function.
+#' @param prob Only used if aggregation.metric is "quant", a number between 0 and 1. By default 0.9.
+#' @return An object of class "vector".
 #'
 #' @description
 #'
-#' XXXXX. \insertCite{nichols_evaluation_1993}{ecofunr}.
+#' Evaporative fraction (EF) is the ration between Latent heat and the sum of sensible heat and latent heat. EF is used to "characterize the energy partition over land surfaces"
+#' \insertCite{nichols_evaluation_1993}{ecofunr}.
 #'
-#' @return
+#' \deqn{EF = \frac{LE}{LE + H}}{uWUE = LE / (LE + H)}
+#'
 #' @export
 #'
 #'
 #' @references
 #' \insertAllCited{}
-
 #' @examples
 #'
 #'

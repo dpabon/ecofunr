@@ -6,10 +6,12 @@
 \alias{ecofunr-package}
 \title{ecofunr: A package to retrive \strong{Eco}system \strong{Fun}ctional properties from Eddy covariance data.}
 \description{
-The \code{ecofunr} package provide different functions to estimate several ecosystem functional properties as:
+The \code{ecofunr} package provide different functions to derive ecosystem functional properties from FLUXNET data as:
 \itemize{
-\item Carbon use efficiency (CUE)
-\item ....
+\item Carbon use efficiency (cue)
+\item Water use efficiency (wue)
+\item Evaporative Fraction (ef)
+\item Ecosystem Photosynthetic capacity at saturate light (GPPsat)
 }
 }
 \details{

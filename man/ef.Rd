@@ -14,13 +14,23 @@ ef(LE, H, dates, aggregation.time = "NULL", aggregation.metric,
 
 \item{dates}{Dates vector.}
 
-\item{prob}{}
+\item{aggregation.time}{Can be "NULL", "day", "month", "year", growing season "gs". if it's
+a number it's considered as a time window in number of days. If "optim" the optimum number of days will be estimate to reduce the sd of each chunck. See \code{\link[ecofunr]{aggreg}}.}
+
+\item{aggregation.metric}{Can be "mean", "max", "min", "median", and "quant". if "quant" a number between 0 and 1 need to be provided for prob parameter.}
+
+\item{overlapping}{Can be "NULL" or a number. If it's a number equivale to the parameter by of the \cite{\link[zoo]{rollapply}} function.}
+
+\item{prob}{Only used if aggregation.metric is "quant", a number between 0 and 1. By default 0.9.}
+}
+\value{
+An object of class "vector".
 }
 \description{
-XXXXX. \insertCite{nichols_evaluation_1993}{ecofunr}.
-}
-\details{
-Evaporative fraction is the ration between Latent heat and the sum of sensible heat and latent heat.....
+Evaporative fraction (EF) is the ration between Latent heat and the sum of sensible heat and latent heat. EF is used to "characterize the energy partition over land surfaces"
+\insertCite{nichols_evaluation_1993}{ecofunr}.
+
+\deqn{EF = \frac{LE}{LE + H}}{uWUE = LE / (LE + H)}
 }
 \examples{
 

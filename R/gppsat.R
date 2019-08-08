@@ -1,5 +1,8 @@
 #' GPPsat
 #'
+#' Ecosystem Photosynthetic Capacity with light saturated
+#'
+#'
 #' @param GPP GPP time series. Object of class "vector".
 #' @param Radiation Radiation (PAR or APAR) time series. Object of class "vector".
 #' @param method Light response curve model. "NRHLR" or "RHLR". See Details.
@@ -10,7 +13,7 @@
 #' @param alfa Inital slope of the light response curve. By default 0.5.
 #' @param Rd Non-linear response curve intercept. By default 0.
 #' @param conv Curvature paramenter. Ranging from 0 to 1. By default 0.1
-#' @param modelling_effiency XXXXXXX.
+#' @param modelling_effiency Quality control for the model evaluation. A number between 0 and 1. By default 0.4
 #' @param ts Time series output. True or False. By default TRUE. See Details.
 #' @param overlap Rolling moving window type. Could be TRUE or FALSE. See Details.
 #' @param length_day Number of measures per day. By default 48
@@ -19,6 +22,7 @@
 #'
 #' @return If ts = TRUE the result is a vector. If ts = FALSE the result is a single value.
 #' @details
+#'The Ecosystem Photosynthetic Capacity represents the ecosystem potential to uptake CO2 from ecosystem.
 #'
 #'
 #'@examples

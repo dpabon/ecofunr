@@ -6,19 +6,19 @@
 #' @param ET  time series. Object of class "vector". See: \code{\link[bigleaf]{LE.to.ET}}.
 #' @param Gs bulk surface conductance. Object of class "vector"
 #' @param method WUE index. By default "wue". Options: "wue", "iwue", "Iwue", "uwue", "all". See Details for further explanaition.
-#' @param dates a vector of class "Date" of the same length of GPP.
+#' @param dates a vector of class "Date" with the same length of GPP.
 #' @param aggregation.time Can be "NULL", "day", "month", "year", growing season "gs". if it's
 #' a number it's considered as a time window in number of days. If "optim" the optimum number of days will be estimate to reduce the sd of each chunck. See \code{\link[ecofunr]{aggreg}}.
-#' @param aggregation.metric Can be "mean", "max", "min", "median", and "quant". if "quant" a number between 0 and 1 need to be provided in prob parameter
+#' @param aggregation.metric Can be "mean", "max", "min", "median", and "quant". if "quant" a number between 0 and 1 need to be provided for prob parameter.
 #' @param overlapping Can be "NULL" or a number. If it's a number equivale to the parameter by of the \cite{\link[zoo]{rollapply}} function.
 #' @param prob Only used if aggregation.metric is "quant", a number between 0 and 1. By default 0.9.
-#' @return An object of type "data.frame" if wue.v = "all". Otherwise an object of the class "vector".
+#' @return An object of type "data.frame" if method = "all". Otherwise an object of the class "vector".
 #'
 #' @description
-#' This function estimate different Water use efficiency index.
-#' Water use efficiency
+#' This function estimate different metrics of Water Use Efficiency.
 #'
 #' @details
+#'
 #' \strong{Water Use Efficiency (wue) \insertCite{law_environmental_2002}{ecofunr}}
 #'
 #' \deqn{WUE = \frac{GPP (gCm^{-2}s^{-1})}{ET (kg H_{2}Om^{-2}s^{-1})}}{WUE = GPP / ET}
@@ -35,7 +35,7 @@
 #'
 #' \strong{Underlyng Water Use Efficiency (uwue)} \insertCite{zhou_effect_2014}{ecofunr}
 #'
-#' \deqn{uWUE = \frac{GPP * \sqrt{VPD}{ET}}{uWUE = GPP * sqrt(VPD) / ET}
+#' \deqn{uWUE = \frac{GPP * \sqrt{VPD}}{ET}}{uWUE = GPP * sqrt(VPD) / ET}
 #'
 #' \strong{Undelying Water Use Efficiency using transpiration from TEA algorithm (teauWUE)} \insertCite{nelson_coupling_2018-1}{ecofunr}
 #'

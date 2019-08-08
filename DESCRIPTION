@@ -1,18 +1,25 @@
 Package: ecofunr
 Type: Package
 Title: Deriving Ecosystem Functional Properties
-Version: 0.1.0
+Version: 0.0.0.9000
 Author@R: c(
     person("Daniel E.", "Pabon-Moreno", email = "dpabon@bgc-jena.mpg.de", role(c("aut", "cre")))
-    person("Mirco", "Migliavacca", email = "mmigliavacca@bgc-jena.mpg.de", role ("ctb"))
-    person("Miguel", "Mahecha", email = "mmahecha@bgc-jena.mpg.de", role ("ctb"))
+    person("Mirco", "Migliavacca", email = "mmigliavacca@bgc-jena.mpg.de", role ("aut", "ctb"))
+    person("Miguel", "Mahecha", email = "mmahecha@bgc-jena.mpg.de", role ("aut", "ctb"))
     )
 URL: https://github.com/dpabon/ecofunr
 BugReports: https://github.com/dpabon/ecofunr/issues
 # Maintainer: The package maintainer <yourself@somewhere.net
-Description: A package to derive Ecosystem Functional properties using the
-    exchange of energy and matter registered by eddy covariance towers. See XXXX
-    for more information, and examples
+Description: A package to derive Ecosystem Functional properties (EFPs) using the
+    exchange of energy and matter registered by eddy covariance towers, specifically by FLUXNET
+    database (https://fluxnet.fluxdata.org).
+    The package also provide different algorithms to extract eco-physiophenological metrics as
+    the timing of the maximum photosynthetic rate (GPPmax) or the beggining and the end of the growing
+    season.
+    This package provide a flexible framework to derive EFPs at different temporal scales 
+    using different aggregation metrics. In future the package will include different algorithms to derive EFPs
+    using remote sensing information.
+    For more information about EFPs please see: https://doi.org/10.1073/pnas.1216065111
 License: GPL-3
 Encoding: UTF-8
 LazyData: true

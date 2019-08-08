@@ -31,7 +31,7 @@ gppsat(GPP, Radiation, saturation = 1500, method = "NRHLR",
 
 \item{conv}{Curvature paramenter. Ranging from 0 to 1. By default 0.1}
 
-\item{modelling_effiency}{XXXXXXX.}
+\item{modelling_effiency}{Quality control for the model evaluation. A number between 0 and 1. By default 0.4}
 
 \item{ts}{Time series output. True or False. By default TRUE. See Details.}
 
@@ -47,10 +47,10 @@ gppsat(GPP, Radiation, saturation = 1500, method = "NRHLR",
 If ts = TRUE the result is a vector. If ts = FALSE the result is a single value.
 }
 \description{
-GPPsat
+Ecosystem Photosynthetic Capacity with light saturated
 }
 \details{
-
+The Ecosystem Photosynthetic Capacity represents the ecosystem potential to uptake CO2 from ecosystem.
 }
 \examples{
 
