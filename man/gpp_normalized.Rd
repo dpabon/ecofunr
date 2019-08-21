@@ -11,7 +11,7 @@ gpp_normalized(GPP, fparc = 0.99, fpar, theta, dates, na.rm = T)
 
 \item{fparc}{fpar normalized at (by default) 0.99}
 
-\item{fpar}{fpar time series (half-hourly). Object of the class "vector"}
+\item{fpar}{fpar time series (daily). Object of the class "vector"}
 
 \item{theta}{zenith angle during the solstice}
 

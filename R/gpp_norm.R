@@ -2,7 +2,7 @@
 #'
 #' @param GPP GPP time series (half-hourly). Object of the class "vector"
 #' @param fparc fpar normalized at (by default) 0.99
-#' @param fpar fpar time series (half-hourly). Object of the class "vector"
+#' @param fpar fpar time series (daily). Object of the class "vector"
 #' @param theta zenith angle during the solstice
 #' @param dates A vector with half-hourly dates of class "Date" or class "numeric" (ISO timestamp). In FLUXNET correspond to the column "TIMESTAMP_START"
 #' @param na.rm
@@ -47,7 +47,6 @@ gpp_normalized <- function(GPP,
     dates <- as.Date(dates, "%Y%m%d")
 
     GPPmax <- tapply(GPP, INDEX = as.character(dates), FUN = quantile, prob = 0.95)
-    fpar <- tapply(fpar, INDEX = as.character(dates), FUN = quantile, prob = 0.95)
 
     gpp.norm <- GPPmax * ((fparc/fpar)*(cos(0)/cos(theta)))
 
