@@ -13,7 +13,7 @@
 #' @export
 #'
 #' @examples
-aggreg <- function(x, aggregation.time, aggregation.metric, dates, overlapping, prob){
+aggreg <- function(x, aggregation.time, aggregation.metric, dates, overlapping = NULL, probs){
   if (is.null(aggregation.time) == F) {
     if (is.numeric(aggregation.time) == F) {
       if (aggregation.time == "month") {
@@ -21,9 +21,9 @@ aggreg <- function(x, aggregation.time, aggregation.metric, dates, overlapping, 
       } else if (aggregation.time == "year") {
         ind <- lubridate::year(dates)
       } else if (aggregation.time == "day") {
-        ind <- format(dates, "%Y-%m")
+        ind <- format(dates, "%Y-%m-%d")
       }
-      return(tapply(x, INDEX = ind, FUN = aggregation.metric, prob = prob))
+      return(tapply(x, INDEX = ind, FUN = aggregation.metric, probs = probs, na.rm = T))
     }
   }else{
     if (is.null(overlapping)) {
@@ -32,7 +32,7 @@ aggreg <- function(x, aggregation.time, aggregation.metric, dates, overlapping, 
       width <- aggregation.time
       by <- overlapping
     }
-    return(zoo::rollapply(x, width = width, FUN = aggregation.metric, by = by, prob = prob))
+    return(zoo::rollapply(x, width = width, FUN = aggregation.metric, by = by, probs = probs, na.rm = T))
   }
 
 }

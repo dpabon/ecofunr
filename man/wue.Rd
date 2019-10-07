@@ -5,7 +5,7 @@
 \title{Water Use Efficiency}
 \usage{
 wue(GPP, VPD, ET, Gs, method = "wue", dates, aggregation.time = "NULL",
-  aggregation.metric, overlapping = F, prob = 0.9)
+  aggregation.metric, overlapping = NULL, probs = 0.9)
 }
 \arguments{
 \item{GPP}{time series. Object of class "vector".}
@@ -23,7 +23,7 @@ wue(GPP, VPD, ET, Gs, method = "wue", dates, aggregation.time = "NULL",
 \item{aggregation.time}{Can be "NULL", "day", "month", "year", growing season "gs". if it's
 a number it's considered as a time window in number of days. If "optim" the optimum number of days will be estimate to reduce the sd of each chunck. See \code{\link[ecofunr]{aggreg}}.}
 
-\item{aggregation.metric}{Can be "mean", "max", "min", "median", and "quant". if "quant" a number between 0 and 1 need to be provided for prob parameter.}
+\item{aggregation.metric}{Can be "mean", "max", "min", "median", and "quantile". if "quantile" a number between 0 and 1 need to be provided for prob parameter.}
 
 \item{overlapping}{Can be "NULL" or a number. If it's a number equivale to the parameter by of the \cite{\link[zoo]{rollapply}} function.}
 

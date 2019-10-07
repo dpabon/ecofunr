@@ -4,7 +4,8 @@
 \alias{aggreg}
 \title{Aggregation function for Ecosystem Functional Properties}
 \usage{
-aggreg(x, aggregation.time, aggregation.metric, dates, overlapping, prob)
+aggreg(x, aggregation.time, aggregation.metric, dates,
+  overlapping = NULL, probs)
 }
 \arguments{
 \item{x}{EFPs to be aggregated.}
