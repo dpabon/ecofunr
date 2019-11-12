@@ -8,11 +8,11 @@ wue(GPP, VPD, ET, Gs, method = "wue", dates, aggregation.time = "NULL",
   aggregation.metric, overlapping = NULL, probs = 0.9)
 }
 \arguments{
-\item{GPP}{time series. Object of class "vector".}
+\item{GPP}{time series. Object of class "vector" (umol CO2 m-2 s-1).}
 
-\item{VPD}{time series. Object of class "vector".}
+\item{VPD}{time series. Object of class "vector" (kPa).}
 
-\item{ET}{time series. Object of class "vector". See: \code{\link[bigleaf]{LE.to.ET}}.}
+\item{ET}{time series. Object of class "vector". See: \code{\link[bigleaf]{LE.to.ET}} (kg m-2 s-1).}
 
 \item{Gs}{bulk surface conductance. Object of class "vector"}
 
