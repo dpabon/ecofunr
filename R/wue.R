@@ -1,9 +1,9 @@
 #' Water Use Efficiency
 #'
 #' @importFrom Rdpack reprompt
-#' @param GPP  time series. Object of class "vector".
-#' @param VPD  time series. Object of class "vector".
-#' @param ET  time series. Object of class "vector". See: \code{\link[bigleaf]{LE.to.ET}}.
+#' @param GPP  time series. Object of class "vector" (umol CO2 m-2 s-1).
+#' @param VPD  time series. Object of class "vector" (kPa).
+#' @param ET  time series. Object of class "vector". See: \code{\link[bigleaf]{LE.to.ET}} (kg m-2 s-1).
 #' @param Gs bulk surface conductance. Object of class "vector"
 #' @param method WUE index. By default "wue". Options: "wue", "iwue", "Iwue", "uwue", "all". See Details for further explanaition.
 #' @param dates a vector of class "Date" with the same length of GPP.
