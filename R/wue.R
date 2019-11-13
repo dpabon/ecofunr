@@ -57,12 +57,13 @@ wue <- function(GPP, VPD, ET, Gs, method = "wue", dates, aggregation.time = "NUL
 
   # To check the length of the objects
   Check <- ArgumentCheck::newArgCheck()
-  test <- c(length(GPP), length(VPD), length(ET), length(Gs))
+  test <- c(length(GPP), length(VPD), length(ET))
   if (length(unique(test)) != 1) {
     ArgumentCheck::addError(msg = "Vectors don't have the same length", argcheck = Check)
   }
 
   ArgumentCheck::finishArgCheck(Check)
+  GPP <- (GPP * 1e-06 * 0.012011) * 1000
 
   if (method == "wue") {
     wue <- GPP / ET
