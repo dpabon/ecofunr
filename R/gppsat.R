@@ -21,6 +21,7 @@
 #' @param window_method Method used to generate the time series. Could be "left", "center", "right". See details.
 #'
 #' @return If ts = TRUE the result is a vector. If ts = FALSE the result is a single value.
+#' @export
 #' @details
 #'The Ecosystem Photosynthetic Capacity represents the ecosystem potential to uptake CO2 from ecosystem.
 #'
