@@ -27,7 +27,7 @@
 #' @examples
 #'
 #'
-ef <- function(LE, H, dates, aggregation.time = "NULL", aggregation.metric, overlapping = F, prob = 0.9) {
+ef <- function(LE, H, dates, aggregation.time = NULL, aggregation.metric = 'median', overlapping = F, prob = 0.9) {
   EF <- LE / (LE + H)
   if (is.null(aggregation.time)) {
     return(EF)

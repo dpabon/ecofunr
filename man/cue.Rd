@@ -5,8 +5,8 @@
 \title{Carbon Use Efficiency}
 \usage{
 cue(GPP, NEP, NPP, Rb, method = "plants", dates,
-  aggregation.time = "NULL", aggregation.metric, overlapping = F,
-  prob = 0.9)
+  aggregation.time = NULL, aggregation.metric = "median",
+  overlapping = F, prob = 0.9)
 }
 \arguments{
 \item{GPP}{Gross Primary Production (units)}

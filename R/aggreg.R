@@ -5,7 +5,7 @@
 #' a number it's considered as a time window in number of days. If "optim" the optimum number of days will be
 #' estimate to reduce the sd of each chunck.
 #' @param aggregation.metric Can be "mean", "max", "min", "median", and "quant". if "quant" a number between 0 and 1 need to be provided in prob parameter.
-#' @param dates A vector of class "Date" of the same length.
+#' @param dates A vector of class "Date" of the same length as x.
 #' @param overlapping Can be "NULL" or a number. If it's a number equivale to the parameter by of the \cite{\link[zoo]{rollapply}} function.
 #' @param prob Only used if aggregation.metric is "quant", a number between 0 and 1. By default 0.9.
 #'

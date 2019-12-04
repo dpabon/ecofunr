@@ -16,7 +16,7 @@ estimate to reduce the sd of each chunck.}
 
 \item{aggregation.metric}{Can be "mean", "max", "min", "median", and "quant". if "quant" a number between 0 and 1 need to be provided in prob parameter.}
 
-\item{dates}{A vector of class "Date" of the same length of x.}
+\item{dates}{A vector of class "Date" of the same length as x.}
 
 \item{overlapping}{Can be "NULL" or a number. If it's a number equivale to the parameter by of the \cite{\link[zoo]{rollapply}} function.}
 
