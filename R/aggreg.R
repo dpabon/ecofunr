@@ -23,7 +23,9 @@ aggreg <- function(x, aggregation.time, aggregation.metric, dates, overlapping =
       } else if (aggregation.time == "day") {
         ind <- format(dates, "%Y-%m-%d")
       }
-      return(tapply(x, INDEX = ind, FUN = aggregation.metric, probs = probs, na.rm = T))
+      output <- tapply(x, INDEX = ind, FUN = aggregation.metric, probs = probs, na.rm = T)
+      names(output) <- unique(ind)
+      return()
     }
   }else{
     if (is.null(overlapping)) {
