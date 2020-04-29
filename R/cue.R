@@ -41,7 +41,8 @@
 #' \insertAllCited{}
 #'
 #' @examples
-cue <- function(GPP, NEP, NPP, Rb, method = "plants", dates, aggregation.time = "NULL", aggregation.metric, overlapping = F, prob = 0.9) {
+cue <- function(GPP, NEP, NPP, Rb, method = "plants", dates, aggregation.time = NULL, 
+                aggregation.metric = 'median', overlapping = F, prob = 0.9) {
   # parameters controls
   if (method == "plants") {
     cue <-  NPP / GPP
@@ -61,7 +62,7 @@ cue <- function(GPP, NEP, NPP, Rb, method = "plants", dates, aggregation.time = 
   }
   else if (method == "apparent") {
     cue <- 1 - (Rb / GPP)
-    if (is.null(cue)) {
+    if (is.null(aggregation.time)) {
       return(cue)
     }else{
       return(aggreg(cue, aggregation.time, aggregation.metric, dates, overlapping, prob))
@@ -79,5 +80,8 @@ cue <- function(GPP, NEP, NPP, Rb, method = "plants", dates, aggregation.time = 
       acue <- aggreg(acue, aggregation.time, aggregation.metric, dates, overlapping, prob)
       return(data.frame(plant.cue = pcue, eco.cue = ecue, appa.cue = acue))
     }
+  }
+  else {
+    stop(sprintf('method `%s` is undefined. Valid methods: plants, ecosystem, apparent, all', method))
   }
 }

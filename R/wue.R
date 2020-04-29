@@ -51,7 +51,7 @@
 #' @references
 #' \insertAllCited{}
 #'
-wue <- function(GPP, VPD, ET, Gs, method = "wue", dates, aggregation.time = "NULL", aggregation.metric, overlapping = NULL, probs = 0.9) {
+wue <- function(GPP, VPD, ET, Gs, method = "wue", dates, aggregation.time = NULL, aggregation.metric = 'median', overlapping = NULL, probs = 0.9) {
   # to check arguments and program error messages
   # three options for wue.v = wue (water use efficiency), iwue (intrinsic water use efficiency), Iwue (inherent water use efficiency), uwue (underlying water use efficiency)
 
@@ -111,5 +111,8 @@ wue <- function(GPP, VPD, ET, Gs, method = "wue", dates, aggregation.time = "NUL
       uwue <- aggreg(uwue, aggregation.time, aggregation.metric, dates, overlapping, probs)
       return(data.frame(wue = wue, intrinc.wue = iwue, inher.wue = Iwue, under.wue = uwue))
     }
+  }
+  else {
+    stop(sprintf('method `%s` is undefined. Valid methods: wue, iwue, Iwue, uwue, all', method))
   }
 }
