@@ -11,6 +11,9 @@
 
 \item{nsamples}{number of surrogate time series}
 }
+\value{
+
+}
 \description{
 Get random ensemble time series
 }

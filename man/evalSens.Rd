@@ -11,6 +11,9 @@ evalSens(SCAPE_res, Rb = NA)
 
 \item{Rb}{vector: in case it applies: an Rb time series}
 }
+\value{
+
+}
 \description{
 Evaluating the SCAPE performance
 }

@@ -4,11 +4,24 @@
 \alias{gppsat}
 \title{GPPsat}
 \usage{
-gppsat(GPP, Radiation, saturation = 1500, method = "NRHLR",
-  method_optim = "L-BFGS-B", Amax = "quantile", probs = 0.9,
-  alfa = 0.5, Rd = 0, conv = 0.1, modelling_effiency = 0.4,
-  ts = T, overlap = T, window_method = "center", length_day = 48,
-  width = 5)
+gppsat(
+  GPP,
+  Radiation,
+  saturation = 1500,
+  method = "NRHLR",
+  method_optim = "L-BFGS-B",
+  Amax = "quantile",
+  probs = 0.9,
+  alfa = 0.5,
+  Rd = 0,
+  conv = 0.1,
+  modelling_effiency = 0.4,
+  ts = T,
+  overlap = T,
+  window_method = "center",
+  length_day = 48,
+  width = 5
+)
 }
 \arguments{
 \item{GPP}{GPP time series. Object of class "vector".}

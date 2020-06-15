@@ -4,8 +4,7 @@
 \alias{timeseries}
 \title{EFPs temporal series}
 \usage{
-timeseries(..., data.day = 48, width = 5, overlap = T,
-  method = "center")
+timeseries(..., data.day = 48, width = 5, overlap = T, method = "center")
 }
 \arguments{
 \item{data.day}{A number. number of data per day.}

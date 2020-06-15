@@ -17,6 +17,9 @@ getRb2Sens(tau_lf, rho_lf, tau, rho, S)
 
 \item{S}{numeric: estimated Q10 value or}
 }
+\value{
+
+}
 \description{
 Calculate basal respiration from decomposed signal and Q10 value
 }

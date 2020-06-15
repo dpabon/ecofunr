@@ -4,8 +4,14 @@
 \alias{aggreg}
 \title{Aggregation function for Ecosystem Functional Properties}
 \usage{
-aggreg(x, aggregation.time, aggregation.metric, dates,
-  overlapping = NULL, probs)
+aggreg(
+  x,
+  aggregation.time,
+  aggregation.metric,
+  dates,
+  overlapping = NULL,
+  probs
+)
 }
 \arguments{
 \item{x}{EFPs to be aggregated.}
@@ -21,6 +27,9 @@ estimate to reduce the sd of each chunck.}
 \item{overlapping}{Can be "NULL" or a number. If it's a number equivale to the parameter by of the \cite{\link[zoo]{rollapply}} function.}
 
 \item{prob}{Only used if aggregation.metric is "quant", a number between 0 and 1. By default 0.9.}
+}
+\value{
+
 }
 \description{
 Aggregation function for Ecosystem Functional Properties

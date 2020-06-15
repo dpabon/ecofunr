@@ -4,8 +4,17 @@
 \alias{lue}
 \title{LUE}
 \usage{
-lue(GPP, APAR, method = "max", probs = 0.9, ts = T, overlap = T,
-  length_day = 48, width = 5, window_method = "center")
+lue(
+  GPP,
+  APAR,
+  method = "max",
+  probs = 0.9,
+  ts = T,
+  overlap = T,
+  length_day = 48,
+  width = 5,
+  window_method = "center"
+)
 }
 \arguments{
 \item{GPP}{Object of the class 'vector'. Matrix and dataframes are coerced as vectors.}
@@ -25,6 +34,9 @@ lue(GPP, APAR, method = "max", probs = 0.9, ts = T, overlap = T,
 \item{width}{window width (days). Must be an integer number.}
 
 \item{window_method}{if overlap = TRUE, a window method must be provided. Could be 'right', 'center', 'left'. By default 'center' See Details.}
+}
+\value{
+
 }
 \description{
 Light use effiency function.

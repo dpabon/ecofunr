@@ -3,7 +3,6 @@
 \docType{package}
 \name{ecofunr}
 \alias{ecofunr}
-\alias{ecofunr-package}
 \title{ecofunr: A package to retrive \strong{Eco}system \strong{Fun}ctional properties from Eddy covariance data.}
 \description{
 The \code{ecofunr} package provide different functions to derive ecosystem functional properties from FLUXNET data as:
