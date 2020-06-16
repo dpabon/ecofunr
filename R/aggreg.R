@@ -38,3 +38,4 @@ aggreg <- function(x, aggregation.time, aggregation.metric, dates, overlapping =
   }
 
 }
+
