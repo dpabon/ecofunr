@@ -25,7 +25,7 @@
 #' @details
 #'The Ecosystem Photosynthetic Capacity represents the ecosystem potential to uptake CO2 from ecosystem.
 #'
-#'PAR can be estimated as SWIN * 2.11  (Britton & Dodd, 1976)
+#' PAR can be estimated as SWIN * 2.11  (Britton & Dodd, 1976)
 #'
 #' To include (Musavi et al., 2016)
 #'
@@ -34,21 +34,6 @@
 #'
 #'
 #'
-NRHRF <- function(theta, ppfd){
-
-  Amax <- theta[1]
-  alfa <- theta[2]
-  Rd <- theta[3]
-  conv <- theta[4]
-
-  tmp <- (alfa*ppfd + Amax) - sqrt(((alfa*ppfd + Amax)^2) - (4*alfa*ppfd*conv*Amax))
-  sim <- (tmp/(2*conv)) + Rd
-
-  return(sim)
-
-}
-
-
 gppsat <- function(GPP,
                    Radiation,
                    saturation = 1500,
@@ -78,6 +63,19 @@ gppsat <- function(GPP,
 
   GPP <- as.vector(GPP)
   Radiation <- as.vector(Radiation)
+  NRHRF <- function(theta, ppfd){
+
+    Amax <- theta[1]
+    alfa <- theta[2]
+    Rd <- theta[3]
+    conv <- theta[4]
+
+    tmp <- (alfa*ppfd + Amax) - sqrt(((alfa*ppfd + Amax)^2) - (4*alfa*ppfd*conv*Amax))
+    sim <- (tmp/(2*conv)) + Rd
+
+    return(sim)
+
+  }
 
   if (length(GPP) != length(Radiation)) {
     stop("GPP and Radiation don't have the same length")

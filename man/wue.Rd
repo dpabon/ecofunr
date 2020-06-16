@@ -11,8 +11,8 @@ wue(
   Gs,
   method = "wue",
   dates,
-  aggregation.time = "NULL",
-  aggregation.metric,
+  aggregation.time = NULL,
+  aggregation.metric = "median",
   overlapping = NULL,
   probs = 0.9
 )
