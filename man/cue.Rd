@@ -11,8 +11,8 @@ cue(
   Rb,
   method = "plants",
   dates,
-  aggregation.time = "NULL",
-  aggregation.metric,
+  aggregation.time = NULL,
+  aggregation.metric = "median",
   overlapping = F,
   prob = 0.9
 )

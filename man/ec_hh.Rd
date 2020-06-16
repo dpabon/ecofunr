@@ -4,7 +4,8 @@
 \name{ec_hh}
 \alias{ec_hh}
 \title{Sample of half-hourly eddy covariance data used for EFPs calclutaion.}
-\format{A data frame with 39408 rows and 26 variables:
+\format{
+A data frame with 39408 rows and 26 variables:
 \describe{
   \item{year}{Year of measurement}
   \item{month}{Month of measurement}
@@ -32,7 +33,8 @@
   \item{GPP_qc}{Quality control of GPP}
   \item{Reco}{Ecosystem respiration from nighttime partitioning (umol m-2 s-1)}
   \item{date}{date as POSIXct}
-}}
+}
+}
 \source{
 \url{https://zenodo.org/record/1314194#.Xee-WuhKiF5} \doi{10.5281/zenodo.1314194}
 }
