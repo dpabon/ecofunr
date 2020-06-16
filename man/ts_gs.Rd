@@ -11,6 +11,9 @@ ts_gs(x, max.ft = 5)
 
 \item{max.ft}{the maximum coeffient that will be used to trace the number of growing seassons}
 }
+\value{
+
+}
 \description{
 Determine the number of growing seasons in a temporal series.
 }

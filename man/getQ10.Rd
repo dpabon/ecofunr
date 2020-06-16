@@ -4,9 +4,21 @@
 \alias{getQ10}
 \title{Title Estimate \eqn{Q_{10}}{Q10} value and time varying \eqn{R_b}{Rb} from temperature and efflux time series including uncertainty.}
 \usage{
-getQ10(temperature, respiration, sf, Tref = 15, gam = 10,
-  fborder = 30, M = -1, nss = 0, method = "Fourier",
-  weights = NULL, lag = NULL, gapFilling = TRUE, doPlot = FALSE)
+getQ10(
+  temperature,
+  respiration,
+  sf,
+  Tref = 15,
+  gam = 10,
+  fborder = 30,
+  M = -1,
+  nss = 0,
+  method = "Fourier",
+  weights = NULL,
+  lag = NULL,
+  gapFilling = TRUE,
+  doPlot = FALSE
+)
 }
 \arguments{
 \item{temperature}{numeric vector: temperature time series}
@@ -34,6 +46,9 @@ getQ10(temperature, respiration, sf, Tref = 15, gam = 10,
 \item{gapFilling}{Logical: Choose whether Gap-Filling should be applied}
 
 \item{doPlot}{Logical: Choose whether Surrogates should be plotted}
+}
+\value{
+
 }
 \description{
 Function to determine the temperature sensitivity (\eqn{Q_{10}}{Q10} value) and time varying

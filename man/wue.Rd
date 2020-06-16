@@ -4,8 +4,18 @@
 \alias{wue}
 \title{Water Use Efficiency}
 \usage{
-wue(GPP, VPD, ET, Gs, method = "wue", dates, aggregation.time = NULL,
-  aggregation.metric = "median", overlapping = NULL, probs = 0.9)
+wue(
+  GPP,
+  VPD,
+  ET,
+  Gs,
+  method = "wue",
+  dates,
+  aggregation.time = "NULL",
+  aggregation.metric,
+  overlapping = NULL,
+  probs = 0.9
+)
 }
 \arguments{
 \item{GPP}{time series. Object of class "vector" (umol CO2 m-2 s-1).}

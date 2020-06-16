@@ -4,9 +4,19 @@
 \alias{getArrhenius}
 \title{Estimate \eqn{E_a}{Ea} value and time varying \eqn{R_b}{Rb} from temperature and efflux time series including uncertainty.}
 \usage{
-getArrhenius(temperature, respiration, sf, fborder = 30, M = -1,
-  nss = 0, method = "Fourier", weights = NULL, lag = NULL,
-  gapFilling = TRUE, doPlot = FALSE)
+getArrhenius(
+  temperature,
+  respiration,
+  sf,
+  fborder = 30,
+  M = -1,
+  nss = 0,
+  method = "Fourier",
+  weights = NULL,
+  lag = NULL,
+  gapFilling = TRUE,
+  doPlot = FALSE
+)
 }
 \arguments{
 \item{temperature}{numeric vector: temperature time series.}

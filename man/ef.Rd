@@ -4,8 +4,15 @@
 \alias{ef}
 \title{Evaporative Fraction}
 \usage{
-ef(LE, H, dates, aggregation.time = NULL,
-  aggregation.metric = "median", overlapping = F, prob = 0.9)
+ef(
+  LE,
+  H,
+  dates,
+  aggregation.time = "NULL",
+  aggregation.metric,
+  overlapping = F,
+  prob = 0.9
+)
 }
 \arguments{
 \item{LE}{Latent heat (units).}

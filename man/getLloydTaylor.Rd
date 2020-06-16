@@ -4,9 +4,21 @@
 \alias{getLloydTaylor}
 \title{Estimate activation energy \eqn{E_a}{Ea} and time varying \eqn{R_b}{Rb} from temperature and efflux time series including uncertainty.}
 \usage{
-getLloydTaylor(temperature, respiration, sf, Tref = 15, T0 = -46.02,
-  fborder = 30, M = -1, nss = 0, method = "Fourier",
-  weights = NULL, lag = NULL, gapFilling = TRUE, doPlot = FALSE)
+getLloydTaylor(
+  temperature,
+  respiration,
+  sf,
+  Tref = 15,
+  T0 = -46.02,
+  fborder = 30,
+  M = -1,
+  nss = 0,
+  method = "Fourier",
+  weights = NULL,
+  lag = NULL,
+  gapFilling = TRUE,
+  doPlot = FALSE
+)
 }
 \arguments{
 \item{temperature}{numeric vector: temperature time series}
@@ -34,6 +46,9 @@ getLloydTaylor(temperature, respiration, sf, Tref = 15, T0 = -46.02,
 \item{gapFilling}{Logical: Choose whether Gap-Filling should be applied}
 
 \item{doPlot}{Logical: Choose whether Surrogates should be plotted}
+}
+\value{
+
 }
 \description{
 Function to determine the temperature sensitivity (\eqn{E_a}{Ea} value) and time varying

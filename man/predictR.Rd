@@ -15,6 +15,9 @@ predictR(Rb, S, tau, lag = 0)
 
 \item{lag}{}
 }
+\value{
+
+}
 \description{
 Calculate respiration for given basal respiration and Q10 value
 }

@@ -25,11 +25,30 @@
 #' @details
 #'The Ecosystem Photosynthetic Capacity represents the ecosystem potential to uptake CO2 from ecosystem.
 #'
+#'PAR can be estimated as SWIN * 2.11  (Britton & Dodd, 1976)
+#'
+#' To include (Musavi et al., 2016)
 #'
 #'@examples
 #'
 #'
 #'
+#'
+NRHRF <- function(theta, ppfd){
+
+  Amax <- theta[1]
+  alfa <- theta[2]
+  Rd <- theta[3]
+  conv <- theta[4]
+
+  tmp <- (alfa*ppfd + Amax) - sqrt(((alfa*ppfd + Amax)^2) - (4*alfa*ppfd*conv*Amax))
+  sim <- (tmp/(2*conv)) + Rd
+
+  return(sim)
+
+}
+
+
 gppsat <- function(GPP,
                    Radiation,
                    saturation = 1500,
@@ -63,7 +82,7 @@ gppsat <- function(GPP,
   if (length(GPP) != length(Radiation)) {
     stop("GPP and Radiation don't have the same length")
   }
-  if (Amax != "quantile" || is.numeric(Amax) == FALSE ) {
+  if (Amax != "quantile" & is.numeric(Amax) == FALSE) {
     stop("Amax must be 'quantile' or a number")
   }
   if (Amax == "quantile" & (probs > 1 || probs < 0)) {
@@ -93,16 +112,16 @@ gppsat <- function(GPP,
 
   if (ts == T) {
     GPP <- matrix(GPP, ncol = (length(GPP) / length_day))
-    Radiation <- matrix(Radiation, (ncol = length(Radiation) / length_day))
+    Radiation <- matrix(Radiation, ncol = (length(Radiation) / length_day))
     if (overlap == T) {
-      out <- vector(NA, length = ncol(GPP))
+      out <- rep(NA, length = ncol(GPP))
       gppsat_t <- function(GPP, Radiation, saturation, Amax, probs, alfa, Rd, conv, modelling_effiency, min_arr, max_arr) {
         subdat <- data.frame(GPP = as.vector(GPP[,min_arr:max_arr]),
                              Radiation = as.vector(Radiation[,min_arr:max_arr]))
 
         subdat <- na.omit(subdat)
 
-        if (nrow(subdat) > 10) {
+        if (nrow(subdat) < 10) {
           warning("The temporal window contain less than 10 values, please consider use a bigger size window", inmediate = T, noBreaks. = T)
         }
         if (Amax == "quantile") {
@@ -151,22 +170,22 @@ gppsat <- function(GPP,
           }
           return(RSS)
         },
-        ppfd = subdat$APAR,
-        Fc = subdat$Radiation,
+        ppfd = subdat$Radiation,
+        Fc = subdat$GPP,
         method = method_optim,
         lower = c(0, 0, -10, 0.0001),
         upper = c(200, 20, 50, 1)))
 
         if (exists("res.optim") == TRUE) {
           # require sirad added
-          try(outstats <- sirad::modeval(NRHRF(res.optim$par,subdat$APAR),subdat$GPP))
+          try(outstats <- sirad::modeval(NRHRF(res.optim$par,subdat$Radiation),subdat$GPP))
           # evaluate the model effiency.
           # In this case res.optim$par is the four values of the theta object (see NRHHRF_function.R file) optimized
 
           if (exists("outstats") == TRUE) {
             outstats.EF <- outstats$EF
             #if the model effiency is less than 0.40 the output is NA.
-            if (outstats.EF <= modelling_effiency) {
+            if (outstats.EF <= modelling_effiency | is.na(outstats.EF)) {
               warning(paste("The model effiency is less than", modelling_effiency, "between", min_arr, ":", max_arr, "values. NA returned"),
                       call. = T,
                       noBreaks. = T)
@@ -211,7 +230,7 @@ gppsat <- function(GPP,
       }
       if (window_method == "center") {
         first_k <- 1 + trunc(width/2)
-        last_k <- ncol(x) - trunc(width/2)
+        last_k <- ncol(GPP) - trunc(width/2)
         half_k <- trunc(width/2)
         for (i in first_k:last_k) {
           min_arr <- i - half_k
@@ -315,8 +334,8 @@ gppsat <- function(GPP,
         }
         return(RSS)
       },
-      ppfd = subdat$APAR,
-      Fc = subdat$Radiation,
+      ppfd = subdat$Radiation,
+      Fc = subdat$GPP,
       method = method_optim,
       lower = c(0, 0, -10, 0.0001),
       upper = c(200, 20, 50, 1)))

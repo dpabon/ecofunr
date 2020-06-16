@@ -40,7 +40,7 @@ fPARc: Reference fPAR ofr closed canopy conditions (by default 0.95).
 \examples{
 
 #' @references
-\\insertAllCited{}
+\insertAllCited{}
 
 
 }

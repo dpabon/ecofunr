@@ -9,6 +9,9 @@ gppmax(x, max.ft = 5, timing = TRUE, cyclic = T)
 \arguments{
 \item{cyclic}{}
 }
+\value{
+
+}
 \description{
 Title
 }

@@ -4,9 +4,20 @@
 \alias{getSens}
 \title{Estimate temperature sensitivty value and time varying $R_b$ from temperature and efflux time series including uncertainty.}
 \usage{
-getSens(temperature, respiration, sf, gettau, fborder = 30, M = -1,
-  nss = 0, method = "Fourier", weights = NULL, lag = NULL,
-  gapFilling = TRUE, doPlot = FALSE)
+getSens(
+  temperature,
+  respiration,
+  sf,
+  gettau,
+  fborder = 30,
+  M = -1,
+  nss = 0,
+  method = "Fourier",
+  weights = NULL,
+  lag = NULL,
+  gapFilling = TRUE,
+  doPlot = FALSE
+)
 }
 \arguments{
 \item{temperature}{numeric vector: temperature time series}
@@ -32,6 +43,9 @@ getSens(temperature, respiration, sf, gettau, fborder = 30, M = -1,
 \item{gapFilling}{Logical: Choose whether Gap-Filling should be applied}
 
 \item{doPlot}{Logical: Choose whether Surrogates should be plotted}
+}
+\value{
+
 }
 \description{
 Function to determine the temperature sensitivity sensitivity and time varying
