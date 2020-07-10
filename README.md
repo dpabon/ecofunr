@@ -16,12 +16,6 @@ devtools::install_github("dpabon/ecofunr")
 library(ecofunr)
 ```
 
-## Developing Schedule
-
-* **08-2019** Version: 0.0.0.90000. Functions to derive EFPs at local scale using FLUXNET database)
-* **09-2019** Version: 0.1.0. Functions to derive physio-phenological metrics e.g. Time of the maximum photosyntetic rate, beggining and end of the growing season)
-* **03-2020** Version: 0.2.0. Functions to derive EFPs (including physiophenological metrics) using remote sensing information (Sentinel-2) 
-
 ## Acknowledgments
 
 
